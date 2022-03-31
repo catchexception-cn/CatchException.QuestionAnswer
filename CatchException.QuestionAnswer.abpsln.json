@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "CatchException.QuestionAnswer": {
+      "path": "CatchException.QuestionAnswer.abpmdl.json"
+    }
+  }
+}

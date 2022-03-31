@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>CatchException.QuestionAnswer</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.MongoDB" Version="5.1.4" />
+    <ProjectReference Include="..\CatchException.QuestionAnswer.Domain\CatchException.QuestionAnswer.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

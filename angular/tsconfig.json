@@ -1,0 +1,15 @@
+{
+  "extends": "./tsconfig.prod.json",
+  "compilerOptions": {
+    "paths": {
+      "@catch-exception/question-answer": [
+        "projects/question-answer/src/public-api.ts"
+      ],
+      "@catch-exception/question-answer/config": [
+        "projects/question-answer/config/src/public-api.ts"
+      ],
+      "@proxy": ["projects/question-answer/src/lib/proxy/index.ts"],
+      "@proxy/*": ["projects/question-answer/src/lib/proxy/*"]
+    }
+  }
+}

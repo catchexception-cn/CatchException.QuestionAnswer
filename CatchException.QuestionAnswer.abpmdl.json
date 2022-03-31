@@ -1,0 +1,111 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "CatchException.QuestionAnswer.Domain.Shared": {
+      "path": "src/CatchException.QuestionAnswer.Domain.Shared/CatchException.QuestionAnswer.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Domain": {
+      "path": "src/CatchException.QuestionAnswer.Domain/CatchException.QuestionAnswer.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Application.Contracts": {
+      "path": "src/CatchException.QuestionAnswer.Application.Contracts/CatchException.QuestionAnswer.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Application": {
+      "path": "src/CatchException.QuestionAnswer.Application/CatchException.QuestionAnswer.Application.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.EntityFrameworkCore": {
+      "path": "src/CatchException.QuestionAnswer.EntityFrameworkCore/CatchException.QuestionAnswer.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.MongoDB": {
+      "path": "src/CatchException.QuestionAnswer.MongoDB/CatchException.QuestionAnswer.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.HttpApi": {
+      "path": "src/CatchException.QuestionAnswer.HttpApi/CatchException.QuestionAnswer.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.HttpApi.Client": {
+      "path": "src/CatchException.QuestionAnswer.HttpApi.Client/CatchException.QuestionAnswer.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.TestBase": {
+      "path": "test/CatchException.QuestionAnswer.TestBase/CatchException.QuestionAnswer.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.EntityFrameworkCore.Tests": {
+      "path": "test/CatchException.QuestionAnswer.EntityFrameworkCore.Tests/CatchException.QuestionAnswer.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.MongoDB.Tests": {
+      "path": "test/CatchException.QuestionAnswer.MongoDB.Tests/CatchException.QuestionAnswer.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.Domain.Tests": {
+      "path": "test/CatchException.QuestionAnswer.Domain.Tests/CatchException.QuestionAnswer.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.Application.Tests": {
+      "path": "test/CatchException.QuestionAnswer.Application.Tests/CatchException.QuestionAnswer.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.HttpApi.Host": {
+      "path": "host/CatchException.QuestionAnswer.HttpApi.Host/CatchException.QuestionAnswer.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.Web": {
+      "path": "src/CatchException.QuestionAnswer.Web/CatchException.QuestionAnswer.Web.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/CatchException.QuestionAnswer.HttpApi.Client.ConsoleTestApp/CatchException.QuestionAnswer.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "CatchException.QuestionAnswer.Web.Host": {
+      "path": "host/CatchException.QuestionAnswer.Web.Host/CatchException.QuestionAnswer.Web.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.IdentityServer": {
+      "path": "host/CatchException.QuestionAnswer.IdentityServer/CatchException.QuestionAnswer.IdentityServer.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.Host.Shared": {
+      "path": "host/CatchException.QuestionAnswer.Host.Shared/CatchException.QuestionAnswer.Host.Shared.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.Web.Unified": {
+      "path": "host/CatchException.QuestionAnswer.Web.Unified/CatchException.QuestionAnswer.Web.Unified.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.Blazor": {
+      "path": "src/CatchException.QuestionAnswer.Blazor/CatchException.QuestionAnswer.Blazor.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Blazor.Host": {
+      "path": "host/CatchException.QuestionAnswer.Blazor.Host/CatchException.QuestionAnswer.Blazor.Host.abppkg.json",
+      "folder": "host"
+    },
+    "CatchException.QuestionAnswer.Blazor.Server": {
+      "path": "src/CatchException.QuestionAnswer.Blazor.Server/CatchException.QuestionAnswer.Blazor.Server.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Blazor.WebAssembly": {
+      "path": "src/CatchException.QuestionAnswer.Blazor.WebAssembly/CatchException.QuestionAnswer.Blazor.WebAssembly.abppkg.json",
+      "folder": "src"
+    },
+    "CatchException.QuestionAnswer.Blazor.Server.Host": {
+      "path": "host/CatchException.QuestionAnswer.Blazor.Server.Host/CatchException.QuestionAnswer.Blazor.Server.Host.abppkg.json",
+      "folder": "host"
+    }
+  }
+}
