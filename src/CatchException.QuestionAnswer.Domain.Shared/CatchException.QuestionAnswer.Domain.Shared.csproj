@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\common.props" />
 
@@ -19,6 +19,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Localization\QuestionAnswer\*.json" />
     <Content Remove="Localization\QuestionAnswer\*.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Questions\" />
+    <Folder Include="Answerers\" />
   </ItemGroup>
 
 </Project>
