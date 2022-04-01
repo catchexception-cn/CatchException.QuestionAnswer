@@ -1,0 +1,3 @@
+[submodule "CatchException.Tagging"]
+	path = CatchException.Tagging
+	url = https://github.com/catchexception-cn/CatchException.Tagging.git
