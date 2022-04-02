@@ -3,7 +3,7 @@
   <Import Project="..\..\common.props" />
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>CatchException.QuestionAnswer</RootNamespace>
   </PropertyGroup>
 
@@ -12,6 +12,7 @@
     <PackageReference Include="Volo.Abp.Ddd.Application" Version="5.1.4" />
     <ProjectReference Include="..\CatchException.QuestionAnswer.Application.Contracts\CatchException.QuestionAnswer.Application.Contracts.csproj" />
     <ProjectReference Include="..\CatchException.QuestionAnswer.Domain\CatchException.QuestionAnswer.Domain.csproj" />
+    <ProjectReference Include="..\..\CatchException.BlobStoring\src\CatchException.BlobStoring.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,6 @@
 [submodule "CatchException.Tagging"]
 	path = CatchException.Tagging
 	url = https://github.com/catchexception-cn/CatchException.Tagging.git
+[submodule "CatchException.BlobStoring"]
+	path = CatchException.BlobStoring
+	url = https://github.com/catchexception-cn/CatchException.BlobStoring.git
