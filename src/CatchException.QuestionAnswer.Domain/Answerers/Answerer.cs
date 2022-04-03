@@ -4,16 +4,14 @@ using Volo.Abp.Users;
 
 namespace CatchException.QuestionAnswer.Answerers;
 
-public class Answerer : FullAuditedAggregateRoot<Guid>, IUser, IUpdateUserData
+public class Answerer : FullAuditedAggregateRoot<Guid>
 {
-    public string Name { get; private set; } = default!;
+    public string NickName { get; private set; } = default!;
 
     public string Title { get; private set; } = default!;
 
     public string Introduction { get; private set; } = default!;
-
-    public string Avatar { get; private set; } = default!;
-
+    
     public string AvatarUrl { get; private set; } = default!;
 
     public string DonationImageUrl { get; private set; } = default!;
@@ -25,12 +23,12 @@ public class Answerer : FullAuditedAggregateRoot<Guid>, IUser, IUpdateUserData
         SetName(name);
         SetTitle(string.Empty);
         SetIntroduction(string.Empty);
-        SetAvatar(string.Empty, string.Empty);
+        SetAvatar(string.Empty);
     }
 
     public Answerer SetName(string name)
     {
-        Name = Check.NotNullOrWhiteSpace(name, nameof(name), AnswererConsts.MaxNameLength);
+        NickName = Check.NotNullOrWhiteSpace(name, nameof(name), AnswererConsts.MaxNameLength);
 
         return this;
     }
@@ -50,9 +48,8 @@ public class Answerer : FullAuditedAggregateRoot<Guid>, IUser, IUpdateUserData
         return this;
     }
 
-    public Answerer SetAvatar(string avatar, string avatarUrl)
+    public Answerer SetAvatar(string avatarUrl)
     {
-        Avatar = Check.NotNull(avatar, nameof(avatar), AnswererConsts.MaxAvatarNameLength);
         AvatarUrl = Check.NotNull(avatarUrl, nameof(avatarUrl), AnswererConsts.MaxAvatarUrlLength);
 
         return this;
