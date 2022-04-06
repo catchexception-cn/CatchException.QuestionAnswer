@@ -1,8 +1,8 @@
 ﻿namespace CatchException.QuestionAnswer.Comments;
 
-public enum RepliedType
+public enum CommentType
 {
+    None,
     Question,
-    Answer,
-    Comment
+    Answer
 }

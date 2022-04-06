@@ -5,9 +5,11 @@ namespace CatchException.QuestionAnswer.Comments;
 
 public class Comment : FullAuditedAggregateRoot<Guid>
 {
-    public RepliedType RepliedType { get; protected set; }
+    public CommentType CommentType { get; protected set; }
 
-    public Guid RepliedToId { get; protected set; }
+    public Guid PostId { get; protected set; }
+
+    public Guid? RepliedCommentId { get; protected set; }
 
     public string Text { get; protected set; } = default!;
 
@@ -18,13 +20,15 @@ public class Comment : FullAuditedAggregateRoot<Guid>
 
     public Comment(
         Guid id,
-        RepliedType repliedType,
-        Guid repliedToId,
+        CommentType commentType,
+        Guid postId,
+        Guid? repliedCommentId,
         string text)
         : base(id)
     {
-        RepliedType = repliedType;
-        RepliedToId = repliedToId;
+        CommentType = commentType;
+        PostId = postId;
+        RepliedCommentId = repliedCommentId;
         Text = Check.NotNullOrWhiteSpace(text, nameof(text), CommentConsts.MaxTextLength);
     }
 }

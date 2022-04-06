@@ -1,4 +1,5 @@
-﻿using CatchException.QuestionAnswer.Questions;
+﻿using CatchException.QuestionAnswer.Comments;
+using CatchException.QuestionAnswer.Questions;
 
 using Microsoft.EntityFrameworkCore;
 
@@ -59,6 +60,23 @@ public static class QuestionAnswerDbContextModelCreatingExtensions
 
             b.Navigation(n => n.Tags).UsePropertyAccessMode(PropertyAccessMode.Field);
             b.Navigation(n => n.Votes).UsePropertyAccessMode(PropertyAccessMode.Field);
+        });
+
+        builder.Entity<Comment>(b =>
+        {
+            b.ToTable(QuestionAnswerDbProperties.DbTablePrefix + "Comments", QuestionAnswerDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+
+            b.Property(p => p.Text).IsRequired().HasMaxLength(CommentConsts.MaxTextLength);
+            b.Property(p => p.CommentType).IsRequired();
+
+            b.HasIndex(c => c.PostId);
+            b.HasIndex(c => c.CommentType);
+
+            b.HasDiscriminator(nameof(Comment.CommentType), typeof(CommentType))
+                .HasValue<Comment>(CommentType.None)
+                .HasValue<QuestionComment>(CommentType.Question);
         });
     }
 }
