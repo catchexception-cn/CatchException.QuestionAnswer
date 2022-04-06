@@ -2,7 +2,6 @@
 
 public class QuestionConsts
 {
-
     public const int MaxTitleLength = 128;
     public const int MaxTagsLength = 72;
     public const int MaxDescriptionLength = 4096;

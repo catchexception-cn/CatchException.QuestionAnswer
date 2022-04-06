@@ -1,4 +1,8 @@
-﻿using Volo.Abp.Data;
+﻿using CatchException.QuestionAnswer.Questions;
+
+using Microsoft.EntityFrameworkCore;
+
+using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
 namespace CatchException.QuestionAnswer.EntityFrameworkCore;
@@ -9,4 +13,5 @@ public interface IQuestionAnswerDbContext : IEfCoreDbContext
     /* Add DbSet for each Aggregate Root here. Example:
      * DbSet<Question> Questions { get; }
      */
+    DbSet<Question> Questions { get; }
 }
