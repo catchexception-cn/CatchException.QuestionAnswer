@@ -1,4 +1,5 @@
-﻿using CatchException.QuestionAnswer.Comments;
+﻿using CatchException.QuestionAnswer.Answers;
+using CatchException.QuestionAnswer.Comments;
 using CatchException.QuestionAnswer.Questions;
 
 using Microsoft.EntityFrameworkCore;
@@ -16,4 +17,5 @@ public interface IQuestionAnswerDbContext : IEfCoreDbContext
      */
     DbSet<Question> Questions { get; }
     DbSet<Comment> Comments { get; }
+    DbSet<Answer> Answers { get; }
 }

@@ -1,4 +1,5 @@
-﻿using CatchException.QuestionAnswer.Comments;
+﻿using CatchException.QuestionAnswer.Answers;
+using CatchException.QuestionAnswer.Comments;
 using CatchException.QuestionAnswer.Questions;
 
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ public class QuestionAnswerDbContext : AbpDbContext<QuestionAnswerDbContext>, IQ
      */
     public DbSet<Question> Questions { get; set; } = default!;
     public DbSet<Comment> Comments { get; set; } = default!;
+    public DbSet<Answer> Answers { get; set; } = default!;
 
     public QuestionAnswerDbContext(DbContextOptions<QuestionAnswerDbContext> options)
         : base(options)

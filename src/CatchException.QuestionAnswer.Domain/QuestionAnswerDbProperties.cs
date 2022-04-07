@@ -2,7 +2,7 @@
 
 public static class QuestionAnswerDbProperties
 {
-    public static string DbTablePrefix { get; set; } = "QuestionAnswer";
+    public static string DbTablePrefix { get; set; } = "Qa";
 
     public static string DbSchema { get; set; } = null;
 

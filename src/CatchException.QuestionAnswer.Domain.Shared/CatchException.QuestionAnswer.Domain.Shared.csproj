@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Questions\" />
     <Folder Include="Answerers\" />
     <Folder Include="Comments\" />
+    <Folder Include="Answers\" />
   </ItemGroup>
 
 </Project>

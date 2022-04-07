@@ -6,19 +6,15 @@ public record QuestionVote
 
     public Guid VoterId { get; init; }
 
-    public VoteType VoteType { get; init; }
-
-    public DateTime CreationTime { get; init; }
+    public QuestionVoteType VoteType { get; init; }
 
     public QuestionVote(
         Guid questionId,
         Guid voterId,
-        VoteType voteType,
-        DateTime creationTime)
+        QuestionVoteType voteType)
     {
         QuestionId = questionId;
         VoterId = voterId;
         VoteType = voteType;
-        CreationTime = creationTime;
     }
 }
