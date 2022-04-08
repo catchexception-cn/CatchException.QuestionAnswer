@@ -1,4 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CatchException.QuestionAnswer.Answers;
+using CatchException.QuestionAnswer.Comments;
+using CatchException.QuestionAnswer.Questions;
+
+using Microsoft.EntityFrameworkCore;
+
 using Volo.Abp.Data;
 using Volo.Abp.EntityFrameworkCore;
 
@@ -10,6 +15,9 @@ public class QuestionAnswerDbContext : AbpDbContext<QuestionAnswerDbContext>, IQ
     /* Add DbSet for each Aggregate Root here. Example:
      * public DbSet<Question> Questions { get; set; }
      */
+    public DbSet<Question> Questions { get; set; } = default!;
+    public DbSet<Comment> Comments { get; set; } = default!;
+    public DbSet<Answer> Answers { get; set; } = default!;
 
     public QuestionAnswerDbContext(DbContextOptions<QuestionAnswerDbContext> options)
         : base(options)
