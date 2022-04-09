@@ -25,6 +25,7 @@
     <Folder Include="Answerers\" />
     <Folder Include="Comments\" />
     <Folder Include="Answers\" />
+    <Folder Include="Contents\" />
   </ItemGroup>
 
 </Project>
