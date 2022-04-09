@@ -10,13 +10,16 @@ public class Question : FullAuditedAggregateRoot<Guid>
 
     public bool IsResolved { get; protected set; }
     
+
     private readonly List<QuestionVote> _votes;
     public virtual IReadOnlyCollection<QuestionVote> Votes => _votes;
-    //private readonly List<Comment> _comments;
-    //public virtual IReadOnlyCollection<Comment> Comments => _comments;
+
+    private readonly List<QuestionComment> _comments;
+    public virtual IReadOnlyCollection<QuestionComment> Comments => _comments;
 
     private readonly List<QuestionQuestionTag> _tags;
     public virtual IReadOnlyCollection<QuestionQuestionTag> Tags => _tags;
+
 
     protected Question()
     {
