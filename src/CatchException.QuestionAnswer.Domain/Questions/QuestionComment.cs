@@ -4,6 +4,10 @@ namespace CatchException.QuestionAnswer.Questions;
 
 public class QuestionComment : Comment
 {
+
+    public Guid QuestionId { get; set; }
+
+
     protected QuestionComment()
     {
 
@@ -14,8 +18,8 @@ public class QuestionComment : Comment
         Guid questionId,
         Guid repliedId,
         string text)
-        : base(id, CommentType.Question, questionId, repliedId, text)
+        : base(id, repliedId, text)
     {
-
+        this.QuestionId = questionId;
     }
 }

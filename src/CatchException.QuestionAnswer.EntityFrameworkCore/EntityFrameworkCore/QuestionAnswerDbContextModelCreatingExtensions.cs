@@ -71,15 +71,17 @@ public static class QuestionAnswerDbContextModelCreatingExtensions
             b.ConfigureByConvention();
 
             b.Property(p => p.Text).IsRequired().HasMaxLength(CommentConsts.MaxTextLength);
-            b.Property(p => p.CommentType).IsRequired();
 
-            b.HasIndex(c => c.PostId);
-            b.HasIndex(c => c.CommentType);
-
-            b.HasDiscriminator(nameof(Comment.CommentType), typeof(CommentType))
-                .HasValue<Comment>(CommentType.None)
-                .HasValue<QuestionComment>(CommentType.Question);
+            b.HasDiscriminator()
+                       .HasValue<Comment>(nameof(Comment))
+                       .HasValue<AnswerComment>(nameof(AnswerComment))
+                       .HasValue<QuestionComment>(nameof(QuestionComment));
         });
+
+      
+
+
+
 
         builder.Entity<Answer>(b =>
         {

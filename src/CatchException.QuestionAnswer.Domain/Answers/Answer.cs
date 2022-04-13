@@ -11,6 +11,15 @@ public class Answer : ContentWithSnapshot
     private readonly List<AnswerVote> _votes;
     public virtual IReadOnlyCollection<AnswerVote> Votes => _votes;
 
+
+    private readonly List<AnswerSnapshot> _snapshots;
+    public virtual IReadOnlyCollection<AnswerSnapshot> Snapshots => _snapshots;
+
+
+
+    private readonly List<AnswerComment> _comments;
+    public virtual IReadOnlyCollection<AnswerComment> Comments => _comments;
+
     protected Answer()
     {
         _votes = new List<AnswerVote>();

@@ -10,6 +10,7 @@ public class Question : ContentWithSnapshot
 
     public bool IsResolved { get; protected set; }
 
+
     public bool IsClosed { get; protected set; }
 
     public Guid? AcceptedAnswerId { get; protected set; }
@@ -17,8 +18,12 @@ public class Question : ContentWithSnapshot
     private readonly List<QuestionVote> _votes;
     public IReadOnlyCollection<QuestionVote> Votes => _votes;
 
+    private readonly List<QuestionComment> _comments;
+    public virtual IReadOnlyCollection<QuestionComment> Comments => _comments;
+
     private readonly List<QuestionQuestionTag> _tags;
     public IReadOnlyCollection<QuestionQuestionTag> Tags => _tags;
+
 
     protected Question()
     {

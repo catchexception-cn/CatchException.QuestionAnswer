@@ -1,5 +1,4 @@
-﻿using CatchException.QuestionAnswer.Answers;
-
+using CatchException.QuestionAnswer.Answers;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Domain.Services;
 
