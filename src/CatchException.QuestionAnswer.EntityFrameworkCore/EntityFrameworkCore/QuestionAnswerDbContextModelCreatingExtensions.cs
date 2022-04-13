@@ -1,5 +1,6 @@
 ﻿using CatchException.QuestionAnswer.Answers;
 using CatchException.QuestionAnswer.Comments;
+using CatchException.QuestionAnswer.Contents;
 using CatchException.QuestionAnswer.Questions;
 
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +43,7 @@ public static class QuestionAnswerDbContextModelCreatingExtensions
 
             b.ConfigureByConvention();
             b.Property(p => p.Title).IsRequired().HasMaxLength(QuestionConsts.MaxTitleLength);
-            b.Property(p => p.Description).IsRequired().HasMaxLength(QuestionConsts.MaxDescriptionLength);
+            b.Property(p => p.Content).IsRequired().HasMaxLength(ContentConsts.MaxContentLength);
 
             b.OwnsMany(p => p.Votes, v =>
             {
@@ -88,7 +89,7 @@ public static class QuestionAnswerDbContextModelCreatingExtensions
 
             b.ConfigureByConvention();
 
-            b.Property(p => p.Text).IsRequired().HasMaxLength(AnswerConsts.MaxAnswerLength);
+            b.Property(p => p.Content).IsRequired().HasMaxLength(ContentConsts.MaxContentLength);
 
             b.OwnsMany(p => p.Votes, v =>
             {
@@ -98,19 +99,25 @@ public static class QuestionAnswerDbContextModelCreatingExtensions
                 v.HasIndex(vote => vote.AnswerId);
                 v.WithOwner();
             });
-            b.OwnsMany(p => p.Snapshots, s =>
-            {
-                s.ToTable(QuestionAnswerDbProperties.DbTablePrefix + "AnswerSnapshots",
-                    QuestionAnswerDbProperties.DbSchema);
-                s.HasKey(snapshot => new { snapshot.AnswerId, snapshot.LastModificationTime });
-                s.HasIndex(snapshot => snapshot.AnswerId);
-                s.WithOwner();
-            });
 
             b.Navigation(p => p.Votes).UsePropertyAccessMode(PropertyAccessMode.Field);
             b.Navigation(p => p.Snapshots).UsePropertyAccessMode(PropertyAccessMode.Field);
 
             b.HasIndex(p => p.QuestionId);
+        });
+
+        builder.Entity<ContentSnapshot>(b =>
+        {
+            b.ToTable(QuestionAnswerDbProperties.DbTablePrefix + "ContentSnapshots",
+                QuestionAnswerDbProperties.DbSchema);
+
+            b.ConfigureByConvention();
+
+            b.Property(p => p.Snapshot).HasMaxLength(ContentConsts.MaxContentLength);
+            b.Property(p => p.CurrentContent).HasMaxLength(ContentConsts.MaxContentLength);
+
+            b.HasIndex("QuestionId");
+            b.HasIndex("AnswerId");
         });
     }
 }

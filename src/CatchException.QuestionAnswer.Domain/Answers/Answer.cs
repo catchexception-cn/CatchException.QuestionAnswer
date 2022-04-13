@@ -1,13 +1,12 @@
-﻿using Volo.Abp;
-using Volo.Abp.Domain.Entities.Auditing;
+﻿using CatchException.QuestionAnswer.Contents;
+
+using Volo.Abp;
 
 namespace CatchException.QuestionAnswer.Answers;
 
-public class Answer : FullAuditedAggregateRoot<Guid>
+public class Answer : ContentWithSnapshot
 {
     public virtual Guid QuestionId { get; protected set; }
-
-    public virtual string Text { get; protected set; } = default!;
 
     private readonly List<AnswerVote> _votes;
     public virtual IReadOnlyCollection<AnswerVote> Votes => _votes;
@@ -21,38 +20,23 @@ public class Answer : FullAuditedAggregateRoot<Guid>
     private readonly List<AnswerComment> _comments;
     public virtual IReadOnlyCollection<AnswerComment> Comments => _comments;
 
-
     protected Answer()
     {
         _votes = new List<AnswerVote>();
-        _snapshots = new List<AnswerSnapshot>();
     }
 
     public Answer(
         Guid id,
         Guid questionId,
-        string text) : base(id)
+        string content) : base(id)
     {
         QuestionId = questionId;
-        SetTextInternal(text);
+        SetContent(content);
 
         _votes = new List<AnswerVote>();
-        _snapshots = new List<AnswerSnapshot>();
     }
 
-    public Answer Edit(string text)
-    {
-        _snapshots.Add(new AnswerSnapshot(
-            Id,
-            LastModificationTime ?? CreationTime,
-            text));
-
-        SetTextInternal(text);
-
-        return this;
-    }
-
-    internal Answer Vote(
+    public Answer Vote(
         Guid answerId,
         Guid voterId,
         AnswerVoteType voteType)
@@ -60,25 +44,17 @@ public class Answer : FullAuditedAggregateRoot<Guid>
         if (_votes.Any(v =>
                 v.AnswerId == answerId &&
                 v.VoterId == voterId &&
-                v.VoteType == voteType))
-        {
-            throw new UserFriendlyException("");
-        }
-        if (_votes.Any(v =>
+                v.VoteType == voteType) ||
+            _votes.Any(v =>
                 v.AnswerId == answerId &&
                 v.VoterId == voterId &&
                 (int)v.VoteType == -(int)voteType))
         {
-            throw new UserFriendlyException("");
+            return this;
         }
 
         _votes.Add(new AnswerVote(answerId, voterId, voteType));
 
         return this;
-    }
-
-    private void SetTextInternal(string text)
-    {
-        Text = Check.NotNullOrWhiteSpace(text, nameof(text), AnswerConsts.MaxAnswerLength);
     }
 }
